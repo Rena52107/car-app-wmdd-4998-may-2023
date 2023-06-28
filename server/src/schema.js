@@ -118,7 +118,7 @@ const typeDefs = `
 
   type Query {
     person(id: String!): Person
-    people: [Person]
+    people: [Person]!
     car(id: String!): Car
     cars: [Car]
     getPersonCars(personId: String!): [Car]

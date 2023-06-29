@@ -7,10 +7,10 @@ import People from "../components/lists/People";
 const Home = () => {
   return (
     <Space
-    direction="vertical"
-    size="middle"
-    style={{ display: "flex" }}
-  >
+      direction="vertical"
+      size="middle"
+      style={{ display: "flex" }}
+    >
       <Title />
       <Divider />
       <Divider plain>
@@ -22,6 +22,9 @@ const Home = () => {
         <h2>Add Car</h2>
       </Divider>
       <AddCar />
+      <Divider plain>
+        <h2>Record</h2>
+      </Divider>
       <People />
     </Space>
   );

@@ -1,4 +1,6 @@
-import { find, remove, filter } from "lodash";
+import find from "lodash.find";
+import remove from "lodash.remove";
+import filter from "lodash.filter";
 
 const peopleArray = [
   {
@@ -121,7 +123,6 @@ const typeDefs = `
     people: [Person]!
     car(id: String!): Car
     cars: [Car]
-    getPersonCars(personId: String!): [Car]
     personWithcars(id: String!): Showmore
   }
 
@@ -142,9 +143,6 @@ const resolvers = {
     },
     people: () => peopleArray,
     cars: () => carsArray,
-    getPersonCars: (parent, args) => {
-      return filter(carsArray, { personId: args.personId });
-    },
     personWithcars: (parent, args) => {
       const person = find(peopleArray, { id: args.id });
       if (!person) {

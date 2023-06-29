@@ -24,18 +24,21 @@ const AddCar = () => {
     const id = uuidv4();
     const { year, make, model, price, personId } = values;
 
+    // Type casting
+    const parsedYear = parseInt(year, 10);
+    const parsedPrice = parseFloat(price);
+
     addCar({
       variables: {
         id,
-        year,
+        year: parsedYear,
         make,
         model,
-        price,
+        price: parsedPrice,
         personId,
       },
       update: (cache, { data: { addCar } }) => {
         const data = cache.readQuery({ query: GET_CARS });
-        console.log("AddCar.js: ", data);
         cache.writeQuery({
           query: GET_CARS,
           data: { ...data, cars: [...data.cars, addCar] },

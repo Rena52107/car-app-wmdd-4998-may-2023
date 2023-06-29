@@ -104,10 +104,10 @@ const typeDefs = `
 
   type Car {
     id: String!
-    year: String!
+    year: Int!
     make: String!
     model: String!
-    price: String!
+    price: Float!
     personId: String!
   }
 
@@ -130,8 +130,8 @@ const typeDefs = `
     addPerson(id: String!, firstName: String!, lastName: String!): Person
     updatePerson(id: String!, firstName: String!, lastName: String!): Person
     removePerson(id: String!): Person
-    addCar(id: String!, year: String!, make: String!, model: String!, price: String!, personId: String!): Car
-    updateCar(id: String!, year: String!, make: String!, model: String!, price: String!, personId: String!): Car
+    addCar(id: String!, year: Int!, make: String!, model: String!, price: Float!, personId: String!): Car
+    updateCar(id: String!, year: Int!, make: String!, model: String!, price: Float!, personId: String!): Car
     removeCar(id: String!): Car
   }
 `;

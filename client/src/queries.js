@@ -74,10 +74,10 @@ export const GET_PERSONWITHCARS = gql`
 export const ADD_CAR = gql`
   mutation AddCar(
     $id: String!
-    $year: String!
+    $year: Int!
     $make: String!
     $model: String!
-    $price: String!
+    $price: Float!
     $personId: String!
   ) {
     addCar(
@@ -101,10 +101,10 @@ export const ADD_CAR = gql`
 export const UPDATE_CAR = gql`
   mutation UpdateCar(
     $id: String!
-    $year: String!
+    $year: Int!
     $make: String!
     $model: String!
-    $price: String!
+    $price: Float!
     $personId: String!
   ) {
     updateCar(

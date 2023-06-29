@@ -21,13 +21,17 @@ const UpdateCar = (props) => {
   const onFinish = (values) => {
     const { year, make, model, price, personId } = values;
 
+    // Type casting
+    const parsedYear = parseInt(year, 10);
+    const parsedPrice = parseFloat(price);
+
     updateCar({
       variables: {
         id,
-        year,
+        year: parsedYear,
         make,
         model,
-        price,
+        price: parsedPrice,
         personId,
       },
     });

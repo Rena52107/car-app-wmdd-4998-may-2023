@@ -15,7 +15,6 @@ const Showmore = () => {
   if (error) return `Error! ${error.message}`;
 
   const response = data.personWithcars;
-  console.log("GET_PERSONWITHCARS: ", data);
 
   return (
     <Space

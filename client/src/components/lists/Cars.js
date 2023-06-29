@@ -10,8 +10,8 @@ const getStyles = () => ({
     justifyContent: "center",
   },
   item: {
-    width: "68vw"
-  }
+    width: "68vw",
+  },
 });
 
 const Cars = ({ personId }) => {
@@ -26,15 +26,16 @@ const Cars = ({ personId }) => {
     return car.personId === personId;
   });
 
-  console.log("data", data);
-
   return (
     <List
       grid={{ gutter: 20, column: 1 }}
       style={styles.list}
     >
       {carlist.map(({ id, year, make, model, price, personId }) => (
-        <List.Item key={id} style={styles.item}>
+        <List.Item
+          key={id}
+          style={styles.item}
+        >
           <Car
             id={id}
             year={year}

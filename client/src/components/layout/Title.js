@@ -2,6 +2,7 @@ const getStyles = () => ({
   title: {
     padding: "15px",
     textTransform: "uppercase",
+    textAlign: "center",
   },
 });
 

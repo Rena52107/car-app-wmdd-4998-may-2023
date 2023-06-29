@@ -11,7 +11,7 @@ const Root = () => {
         element={<Home />}
       />
       <Route
-        path="/people/*"
+        path="/people/:id"
         element={<Showmore />}
       />
     </Routes>

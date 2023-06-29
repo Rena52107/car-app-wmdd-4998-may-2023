@@ -120,7 +120,7 @@ const typeDefs = `
 
   type Query {
     person(id: String!): Person
-    people: [Person]!
+    people: [Person]
     car(id: String!): Car
     cars: [Car]
     personWithcars(id: String!): Showmore
@@ -130,8 +130,8 @@ const typeDefs = `
     addPerson(id: String!, firstName: String!, lastName: String!): Person
     updatePerson(id: String!, firstName: String!, lastName: String!): Person
     removePerson(id: String!): Person
-    addCar(id: String!, year: String!, make: String!, model: String!, price: String!, personId: ID!): Car
-    updateCar(id: String!, year: String!, make: String!, model: String!, price: String!, personId: ID!): Car
+    addCar(id: String!, year: String!, make: String!, model: String!, price: String!, personId: String!): Car
+    updateCar(id: String!, year: String!, make: String!, model: String!, price: String!, personId: String!): Car
     removeCar(id: String!): Car
   }
 `;

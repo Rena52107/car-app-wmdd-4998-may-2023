@@ -3,21 +3,15 @@ import { EditOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import UpdatePerson from "../forms/UpdatePerson";
 import RemovePerson from "../buttons/RemovePerson";
-
-
-const getStyles = () => ({
-  card: {
-    width: "500px",
-  },
-});
+import Cars from "../lists/Cars";
+import { Link } from "react-router-dom";
 
 const Person = (props) => {
   const { id, firstName, lastName } = props;
-  const styles = getStyles();
   const [editMode, setEditMode] = useState(false);
 
   const handleButtonClick = () => {
-    setEditMode(true);
+    setEditMode(!editMode);
   };
 
   return (
@@ -31,7 +25,6 @@ const Person = (props) => {
         />
       ) : (
         <Card
-          style={styles.card}
           actions={[
             <EditOutlined
               key="edit"
@@ -43,8 +36,10 @@ const Person = (props) => {
               lastName={lastName}
             />,
           ]}
+          title={`${firstName}  ${lastName}`}
         >
-          {firstName} {lastName}
+          <Cars personId={id} />
+          <Link to={`/people/${id}`}>Show more</Link>
         </Card>
       )}
     </>

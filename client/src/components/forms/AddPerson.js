@@ -32,6 +32,8 @@ const AddPerson = () => {
           query: GET_PEOPLE,
           data: { ...data, people: [...data.people, addPerson] },
         });
+
+        form.resetFields();
       },
     });
   };
@@ -42,18 +44,19 @@ const AddPerson = () => {
       name="add-person-form"
       layout="inline"
       onFinish={onFinish}
-      size="middle"
-      style={{ margin: "40px" }}
+      style={{ margin: "40px 0", justifyContent: "center" }}
     >
       <Form.Item
         name="firstName"
         rules={[{ required: true, message: "Please input your first name!" }]}
+        label="First Name"
       >
         <Input placeholder="i.e. John" />
       </Form.Item>
       <Form.Item
         name="lastName"
         rules={[{ required: true, message: "Please input your last name!" }]}
+        label="Last Name"
       >
         <Input placeholder="i.e. Smith" />
       </Form.Item>
